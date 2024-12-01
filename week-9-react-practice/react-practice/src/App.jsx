@@ -1,27 +1,30 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 function App() {
   return <div>
-    <b>hi there</b>
     <Counter></Counter>
     </div>
  
 }
-
 function Counter(){
   const [count,setCount] = useState(0);
 
-  // setInterval(function(){
-  //   setCount(count+1)
-  // },1000)
+useEffect(function(){
 
-  function increaseCount(){
-    setCount(count+1);
-  }
+  setInterval(function(){
+    setCount(count=>count+1)
+    /*
+    count=>count+1
+    or 
+    function(count){
+    return count+1
+    }
+    */
+  },1000)
+},[])
 
 
   return <div>
     <h1 id="text">{count}</h1>
-    <button onClick={increaseCount}>Increase Count</button>
     </div>
   
 }
