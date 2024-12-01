@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="increment()">counter 0</button>
+
+    <script >
+        function increment(){
+            const buttonElement=document.getElementById('btn')
+            const value=buttonElement.innerHTML;
+            console.log(value)
+            console.log(value.split(" "));
+            const counterValue=parseInt(value.split(" ")[1]);
+            console.log(counterValue)
+            const newCounter=counterValue+1;
+            buttonElement.innerHTML="counter "+newCounter;
+        }
+    </script>
+</body>
+</html>

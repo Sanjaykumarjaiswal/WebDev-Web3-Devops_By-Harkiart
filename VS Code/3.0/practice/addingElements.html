@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddingElements</title>
+</head>
+<body>
+    <div id="topDiv">
+        hi there
+    </div>
+
+    <script>
+        const divEl=document.createElement("div");
+        divEl.innerHTML="Hi there";
+        const parentElement= document.querySelector("body");
+        parentElement.appendChild(divEl);
+    </script>
+</body>
+</html>

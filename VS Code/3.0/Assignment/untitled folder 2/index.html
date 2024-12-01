@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+
+</head>
+<body>
+    <div id="firstDiv">
+        
+            <input type="text" placeholder="Add your Todo"></input>
+            <button onclick="addTodo()">Add Todo</button>
+      
+    </div>
+
+
+    <script>
+        let ctr=1;
+function deleteTodo(index){
+
+    const element=document.querySelector("#todo-"+index);
+    document.parentNode.removeChild(element);
+    // const parentDiv=document.getElementById("firstDiv");
+    // document.parentDiv.removeChild(element);
+
+}
+
+        function addTodo(){
+            const inputElement=document.querySelector("input");
+            const value = inputElement.value;
+            
+
+            const newDivEl=document.createElement("div");
+            newDivEl.setAttribute("id","todo-"+ctr)
+            newDivEl.innerHTML="<div>"+value+"</div><button onclick='deleteTodo("+ctr+")'>delete</button>";
+            document.querySelector("#firstDiv").appendChild(newDivEl);
+            ctr+=1;
+          
+
+        }
+    </script>
+</body>
+</html>
